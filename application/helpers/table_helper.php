@@ -232,8 +232,8 @@ function get_items_manage_table($items,$controller)
 	$CI->lang->line('items_category'),
 	$CI->lang->line('items_cost_price'),
 	$CI->lang->line('items_unit_price'),
+	"Trade Price",
 	$CI->lang->line('items_quantity'),
-	$CI->lang->line('items_tax_percents'),
 	'&nbsp;',
 	'&nbsp;',
 	'&nbsp;'	
@@ -293,8 +293,8 @@ function get_item_data_row($item,$controller)
 	$table_data_row.='<td width="14%">'.$item->category.'</td>';
 	$table_data_row.='<td width="14%">'.to_currency($item->cost_price).'</td>';
 	$table_data_row.='<td width="14%">'.to_currency($item->unit_price).'</td>';
+	$table_data_row.='<td width="14%">'.to_currency($item->custom1).'</td>';	
     $table_data_row.='<td width="14%">'.$item->quantity.'</td>';
-	$table_data_row.='<td width="14%">'.$tax_percents.'</td>';
 	$image = '';
 	if (!empty($item->pic_id))
 	{

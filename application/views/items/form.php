@@ -71,6 +71,23 @@ echo form_open('items/save/'.$item_info->item_id,array('id'=>'item_form', 'encty
 	</div>
 </div>
 
+<!--  GARRISON ADDED 4/21/2013 -->
+<div class="field_row clearfix">	
+<?php
+if($this->config->item('custom1_name') != NULL)
+{
+	echo form_label($this->config->item('custom1_name').':', 'custom1',array('class'=>'wide')); ?>
+	<div class='form_field'>
+		<?php echo form_input(array(
+			'name'=>'custom1',
+			'id'=>'custom1',
+			'value'=>$item_info->custom1)
+		);?>
+		</div>
+	</div>
+<?php }//end if?>
+
+
 <div class="field_row clearfix">
 <?php echo form_label($this->lang->line('items_tax_1').':', 'tax_percent_1',array('class'=>'wide')); ?>
 	<div class='form_field'>
@@ -217,7 +234,7 @@ foreach($stock_locations as $key=>$location_detail)
 </div>
 <!-- Parq End -->
 
-<?php for ($i = 0; $i < 11; $i++) 
+<?php for ($i = 2; $i < 11; $i++) 
 { 
 ?>
 	<?php

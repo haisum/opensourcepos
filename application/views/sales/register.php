@@ -93,7 +93,11 @@ else
 		<?php if ($items_module_allowed)
 		{
 		?>
-			<td><?php echo form_input(array('name'=>'price','value'=>$item['price'],'size'=>'6'));?></td>
+			<td>
+				<?php echo form_input(array('name'=>'price','value'=>$item['price'],'size'=>'6'));?>
+				<a href="javascript:;" onclick="$(this).siblings('input[name=price]').val('<?=$item['price']?>')">R</a>&nbsp;|&nbsp;
+				<a href="javascript:;" onclick="$(this).siblings('input[name=price]').val('<?=$item['trade_price']?>')">T</a>
+			</td>
 
 		<?php
 		}
@@ -135,7 +139,7 @@ else
 			?>
 			<td colspan=2 style="text-align: left;">
 			<?php
-	        	if($item['allow_alt_description']==1)
+	        	/*if($item['allow_alt_description']==1)
 	        	{
 	        		echo form_input(array('name'=>'description','value'=>$item['description'],'size'=>'20'));
 	        	}
@@ -151,7 +155,7 @@ else
 	        		    echo $this->lang->line('sales_no_description');
 	           			echo form_hidden('description','');
 	        		}
-	        	}
+	        	}*/
 			?>
 			</td>
 			<td>&nbsp;</td>

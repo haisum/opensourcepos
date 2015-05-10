@@ -64,13 +64,13 @@ if (isset($error_message))
 		<td><span class='long_name'><?php echo $item['name']; ?></span><span class='short_name'><?php echo character_limiter($item['name'],10); ?></span></td>
 		<td><?php echo to_currency($item['price']); ?></td>
 		<td><?php 
-			echo $item['quantity'] . " " . ($show_stock_locations ? " [" . $item['stock_name'] . "]" : ""); 
+			echo intval($item['quantity']) . " " . ($show_stock_locations ? " [" . $item['stock_name'] . "]" : ""); 
 		?>&nbsp;&nbsp;&nbsp;x <?php echo $item['receiving_quantity'] != 0 ? $item['receiving_quantity'] : 1; ?></td>
 		<td><div class="total-value"><?php echo to_currency($item['total']); ?></div></td>
 		</tr>
-	    <tr>
+	    <!--<tr>
 		<td ><?php echo $item['serialnumber']; ?></td>
-	    </tr>
+	    </tr>-->
 	    <?php if ($item['discount'] > 0 ) : ?>
 		<tr>
 			<td colspan="3" style="font-weight: bold;"> <?php echo number_format($item['discount'], 0) . " " . $this->lang->line("sales_discount_included")?> </td>
@@ -88,8 +88,8 @@ if (isset($error_message))
     {
     ?>
 	<tr>
-	<td colspan="3" style='text-align:right;'><?php echo $this->lang->line('sales_payment'); ?></td>
-	<td><div class="total-value"><?php echo $payment_type; ?></div></td>
+	<td colspan="3" style='text-align:right;'><?php //echo $this->lang->line('sales_payment'); ?></td>
+	<td><div class="total-value"><?php //echo $payment_type; ?></div></td>
 	</tr>
 	
 
@@ -114,11 +114,11 @@ if (isset($error_message))
 	</table>
 
 	<div id="sale_return_policy">
-		<?php echo nl2br($this->config->item('return_policy')); ?>
+		<?php //echo nl2br($this->config->item('return_policy')); ?>
 	</div>
-	<div id='barcode'>
+	<!--<div id='barcode'>
 		<img src='data:image/png;base64,<?php echo $barcode; ?>' /><br>
 		<?php echo $receiving_id; ?>
-	</div>
+	</div>-->
 </div>
 <?php $this->load->view("partial/footer"); ?>

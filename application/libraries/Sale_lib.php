@@ -301,6 +301,7 @@ class Sale_lib
             'discount'=>$discount,
 			'in_stock'=>$this->CI->Item_quantities->get_item_quantity($item_id, $item_location)->quantity,
 			'price'=>$price,
+			'trade_price' => $item_info->custom1,
 			'total'=>$total,
 			'discounted_total'=>$this->get_item_total($quantity, $price, $discount, TRUE)
 			)
