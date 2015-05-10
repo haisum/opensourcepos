@@ -33,6 +33,9 @@
 	height:100%;
 	width:100%;
 }
+.total-value{
+	text-align:right;
+}
 
 .TB_overlayMacFFBGHack {background: url(macFFBgHack.png) repeat;}
 .TB_overlayBG {
